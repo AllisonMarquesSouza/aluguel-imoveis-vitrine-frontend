@@ -1,0 +1,43 @@
+.site-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  min-height: 78px;
+  padding: 0 clamp(18px, 4vw, 58px);
+  border-bottom: 1px solid rgba(28, 59, 39, .09);
+  background: rgba(255, 252, 246, .94);
+}
+
+.brand { display: inline-flex; align-items: center; gap: 9px; color: var(--green); text-decoration: none; flex: 0 0 auto; }
+.brand__mark { position: relative; display: grid; place-items: center; width: 39px; height: 40px; }
+.brand__mark i { position: absolute; top: 1px; right: 5px; width: 7px; height: 7px; background: var(--terra); }
+.brand__name { font-size: 17px; font-weight: 800; line-height: .91; letter-spacing: -.7px; }
+.main-nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 38px); margin-left: 18px; }
+.main-nav a { color: #28332b; text-decoration: none; font-size: 14px; font-weight: 650; transition: color .18s ease; }
+.main-nav a:hover { color: var(--terra); }
+.header-tools { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+.city-picker { display: flex; align-items: center; gap: 8px; min-width: 195px; padding: 10px 12px; border: 1px solid #d9d0c0; border-radius: 12px; color: var(--green); background: #fffdf9; }
+.city-picker select { width: 100%; min-width: 0; border: 0; outline: 0; appearance: none; color: var(--ink); background: transparent; font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; }
+.city-picker:focus-within { outline: 3px solid rgba(36, 80, 52, .16); border-color: var(--green); }
+.menu-toggle { display: none; width: 42px; height: 42px; place-items: center; color: var(--green); border: 1px solid var(--line); border-radius: 12px; background: #fffdf9; cursor: pointer; }
+
+@media (max-width: 760px) {
+  .site-header { min-height: 68px; gap: 12px; padding-inline: 18px; }
+  .brand__name { font-size: 15px; }
+  .brand__mark { width: 34px; }
+  .main-nav { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; margin: 0; padding: 8px 18px; border-bottom: 1px solid var(--line); background: #fffdf9; box-shadow: 0 12px 18px rgba(22, 42, 28, .08); }
+  .main-nav--open { display: flex; }
+  .main-nav a { padding: 13px 4px; border-bottom: 1px solid #eee9df; }
+  .main-nav a:last-child { border-bottom: 0; }
+  .header-tools { gap: 8px; }
+  .city-picker { min-width: 0; max-width: 192px; padding: 9px 8px; gap: 5px; }
+  .city-picker select { font-size: 12px; }
+  .menu-toggle { display: grid; }
+}
+
+@media (max-width: 390px) {
+  .site-header { padding-inline: 12px; }
+  .city-picker { max-width: 142px; }
+}

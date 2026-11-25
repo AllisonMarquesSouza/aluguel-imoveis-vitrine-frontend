@@ -1,0 +1,18 @@
+.app-shell { min-height: 100vh; display: flex; flex-direction: column; background: var(--cream); }
+.app-shell > main { flex: 1 0 auto; }
+.site-footer { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px; padding: 23px clamp(20px, 5vw, 72px); border-top: 1px solid var(--line); color: #6f746a; background: #f5f0e7; }
+.site-footer__brand { display: flex; align-items: center; gap: 8px; color: var(--green); font-size: 13px; font-weight: 800; line-height: .95; }
+.site-footer__brand .brand__mark { width: 31px; height: 33px; }
+.site-footer__brand .brand__mark i { right: 1px; }
+.site-footer > p { margin: 0; font-size: 11px; }
+.site-footer > button { display: inline-flex; align-items: center; gap: 8px; justify-self: end; padding: 7px 0; border: 0; color: var(--green); background: transparent; font: inherit; font-size: 11px; font-weight: 750; cursor: pointer; }
+.site-footer > button:hover { color: var(--terra); }
+.site-footer > small { grid-column: 1 / -1; justify-self: center; color: #8a897f; font-size: 10px; }
+.not-found-page { display: grid; align-content: center; justify-items: center; gap: 18px; min-height: 55vh; }
+
+@media (max-width: 620px) {
+  .site-footer { grid-template-columns: auto 1fr; gap: 11px; padding: 20px 18px; }
+  .site-footer > p { font-size: 10px; }
+  .site-footer > button { grid-column: 1 / -1; justify-self: start; }
+  .site-footer > small { justify-self: start; }
+}
